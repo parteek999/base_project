@@ -46,7 +46,8 @@ var DATABASE_CONSTANT ={
     
     GENDER:{
         MALE:"Male",
-        FEMALE:"Female"
+        FEMALE:"Female",
+        OTHER:"other"
     },
 
     ORDER_STATUS:{
@@ -81,6 +82,24 @@ var DATABASE_CONSTANT ={
         FACEBOOK: 'facebook',
         EMAIL: 'email',
         APPLE_ID:'apple'
+    },
+    VERIFICATION_TYPE: {
+        AADHAR_CARD:'aadhar_card',
+        DRIVING_LISCENCE: 'driving_liscence',
+        PANCARD: 'pancard',
+        
+    },
+    USERTYPE: {
+        GUEST:'guest',
+        HOST:'host',
+       
+    },
+    CATEGORY:{
+        POOL:'pool',
+        KARAOKE:'karaoke',
+        BIRTHDAY:'birthday',
+        MUSIC:'music',
+        DRINKING:'drinking'
     }
 };
 
