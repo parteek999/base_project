@@ -97,22 +97,24 @@ const DAO = require('../DAOManager').queries,
       model:Models.Users
     })
 
-
     if(payload.status && payload.status !== 'All'){
       query.status = Config.APP_CONSTANTS.DATABASE_CONSTANT.ORDER_STATUS.PENDING;
       table = await DAO.getUniqueData(Models.Table,{captain: userDetails._id, isBlocked: false},{},{},'name');
       query.tableNo = {$in:table};
     }
+
     else{
     query.status = {$ne:Config.APP_CONSTANTS.DATABASE_CONSTANT.ORDER_STATUS.PENDING};
     query.captainId = userDetails._id;
     query.createdAt = {$gt:new Date().getTime() - 12 * 3600000}
     }
+
   }
 
  
   return DAO.populateData(Models.Order,query,{},{sort:{createdAt:-1}},populateData);
- }
+
+}
 
 
  const OrderAction = async ( payload, userDetails) => {
